@@ -32,54 +32,36 @@ export default function InteractiveBackground() {
         }}
       />
 
-      {/* 2. Tiny Dot Grid */}
+      {/* 2. Base Dot Grid (Faint white) */}
       <div 
         className="absolute inset-0 opacity-20"
         style={{
           backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
-          backgroundSize: '24px 24px',
+          backgroundSize: '16px 16px',
         }}
       />
 
-      {/* 3. Crosshair Grid */}
-      <div className="absolute inset-0 opacity-20">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="crosshairs" x="0" y="0" width="144" height="144" patternUnits="userSpaceOnUse">
-              {/* Center Crosshair */}
-              <path d="M 72 68 L 72 76 M 68 72 L 76 72" stroke="#ffffff" strokeWidth="1" fill="none" />
-              {/* Corner Crosshairs (to ensure perfect tiling) */}
-              <path d="M 0 -4 L 0 4 M -4 0 L 4 0" stroke="#ffffff" strokeWidth="1" fill="none" />
-              <path d="M 144 -4 L 144 4 M 140 0 L 148 0" stroke="#ffffff" strokeWidth="1" fill="none" />
-              <path d="M 0 140 L 0 148 M -4 144 L 4 144" stroke="#ffffff" strokeWidth="1" fill="none" />
-              <path d="M 144 140 L 144 148 M 140 144 L 148 144" stroke="#ffffff" strokeWidth="1" fill="none" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#crosshairs)" />
-        </svg>
-      </div>
-
-      {/* 3. Interactive Mouse Glow (Highlights the grid - SMALLER AREA) */}
+      {/* 3. Glowing Dot Grid (Bright Orange, masked by mouse position) */}
       <div 
         className="absolute inset-0 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(250px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(249, 115, 22, 0.15), transparent 100%)`,
+          backgroundImage: 'radial-gradient(rgba(249, 115, 22, 1) 1.5px, transparent 1.5px)',
+          backgroundSize: '16px 16px',
+          maskImage: `radial-gradient(150px circle at ${mousePosition.x}px ${mousePosition.y}px, black, transparent)`,
+          WebkitMaskImage: `radial-gradient(150px circle at ${mousePosition.x}px ${mousePosition.y}px, black, transparent)`,
         }}
       />
-      
-      {/* 4. Interactive Cell Highlight (Block highlight - SMALLER AREA) */}
+
+      {/* 4. Subtle ambient glow behind the dots */}
       <div 
-        className="absolute inset-0 transition-opacity duration-300 opacity-40"
+        className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
         style={{
-          background: `radial-gradient(100px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(249, 115, 22, 0.25), transparent 100%)`,
-          maskImage: 'linear-gradient(#000, #000)',
-          WebkitMaskImage: 'linear-gradient(#000, #000)',
-          backgroundPosition: `${Math.floor(mousePosition.x / 144) * 144}px ${Math.floor(mousePosition.y / 144) * 144}px`,
+          background: `radial-gradient(200px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(249, 115, 22, 0.08), transparent 100%)`,
         }}
       />
       
       {/* Overlay to dim the edges of the screen */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#06090e_100%)] opacity-80" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#06090e_100%)] opacity-80 pointer-events-none" />
     </div>
   );
 }
