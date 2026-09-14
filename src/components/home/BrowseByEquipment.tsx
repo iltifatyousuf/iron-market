@@ -15,7 +15,7 @@ export default function BrowseByEquipment() {
           {categories?.map((category: any, idx: number) => (
             <Link key={idx} href={`/equipment?category=${category.slug}`}>
               <div className="relative overflow-hidden rounded-lg group cursor-pointer border border-neutral-800 bg-black/20 backdrop-blur-sm border-y border-white/5 p-6 h-full hover:border-orange-500/50 hover:scale-[1.02] transition-all duration-300 flex flex-col">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=600')] bg-cover bg-center grayscale contrast-150 brightness-50 group-hover:brightness-75 transition-all duration-500 opacity-20"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-neutral-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <div className="flex justify-between items-start mb-4 relative z-10">
                   <span className="text-4xl">{category.icon || '🚜'}</span>

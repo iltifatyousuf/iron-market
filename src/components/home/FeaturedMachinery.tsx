@@ -30,7 +30,7 @@ export default async function FeaturedMachinery() {
             <div key={item.id} className="bg-transparent border border-neutral-800 rounded-lg overflow-hidden hover:border-orange-500/50 transition-all duration-300 group flex flex-col">
               <div className="relative h-64 bg-neutral-800 overflow-hidden">
                 <div
-                  className="absolute inset-0 bg-cover bg-center grayscale contrast-125 brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700"
+                  className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
                   style={{ backgroundImage: `url(${item.images?.[0] || 'https://images.unsplash.com/photo-1580901368919-7738efb0f228?w=800&q=80'})` }}
                 />
                 <div className="absolute top-4 left-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded">

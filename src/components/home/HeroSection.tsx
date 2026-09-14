@@ -27,28 +27,8 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 bg-transparent overflow-hidden">
-      {/* Brutalist Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center grayscale contrast-125 brightness-50"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070')",
-        }}
-      ></div>
-
-      {/* Crosshair Grid Overlay (Brutalist style) */}
-      <div className="absolute inset-0 opacity-40 mix-blend-overlay">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="brutalist-crosshairs" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-              <path d="M 40 35 L 40 45 M 35 40 L 45 40" stroke="#ffffff" strokeWidth="1" fill="none" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#brutalist-crosshairs)" />
-        </svg>
-      </div>
-
-      {/* Gradient fade to bottom */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#06090e] via-transparent to-transparent opacity-90"></div>
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-800 via-neutral-950 to-neutral-950 opacity-60"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center text-center">
         <div className="inline-block border border-orange-500 rounded-full px-4 py-1.5 mb-8">
