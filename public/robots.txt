@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+Sitemap: https://ironmarket.com/sitemap.xml
+
+# Block admin and API routes
+Disallow: /api/
+Disallow: /_next/
