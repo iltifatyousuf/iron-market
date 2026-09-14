@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useSession, signOut } from 'next-auth/react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { data: session } = useSession();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,16 +35,41 @@ export default function Navbar() {
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            <Link href="/equipment" className="text-sm font-medium text-neutral-300 hover:text-white transition">Equipment</Link>
+            <Link href="/equipment" className="text-neutral-300 hover:text-white transition-colors text-sm font-medium">Equipment</Link>
             <Link href="/brands" className="text-sm font-medium text-neutral-300 hover:text-white transition">Brands</Link>
             <Link href="/compare" className="text-sm font-medium text-neutral-300 hover:text-white transition">Compare</Link>
-            <Link href="/industries" className="text-sm font-medium text-neutral-300 hover:text-white transition">Industries</Link>
-            <Link href="/insights" className="text-sm font-medium text-neutral-300 hover:text-white transition">Insights</Link>
+            <Link href="/insights" className="text-neutral-300 hover:text-white transition-colors text-sm font-medium">Insights</Link>
+            <Link href="/contact" className="text-neutral-300 hover:text-white transition-colors text-sm font-medium">Contact</Link>
           </nav>
 
-          <div className="hidden md:flex">
-            <Link href="/list-equipment" className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition">
-              List Equipment
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="text-neutral-400">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+            
+            {session ? (
+              <div className="flex items-center space-x-4">
+                <Link href="/account" className="flex items-center space-x-2 text-sm text-neutral-300 hover:text-white">
+                  {session.user?.image ? (
+                    <img src={session.user.image} alt="User" className="w-8 h-8 rounded-full border border-neutral-800" />
+                  ) : (
+                    <div className="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center text-xs">
+                      {session.user?.name?.charAt(0) || 'U'}
+                    </div>
+                  )}
+                </Link>
+                <button onClick={() => signOut()} className="text-sm text-neutral-400 hover:text-white">Log out</button>
+              </div>
+            ) : (
+              <Link href="/login" className="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded font-medium transition-colors text-sm border border-white/10">
+                Sign In
+              </Link>
+            )}
+            
+            <Link href="/contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded font-medium transition-colors text-sm">
+              Sell Equipment
             </Link>
           </div>
 

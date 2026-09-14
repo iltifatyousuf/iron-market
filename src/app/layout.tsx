@@ -6,6 +6,7 @@ import Footer from '@/components/layout/Footer';
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import { CompareProvider } from '@/context/CompareContext';
 import CompareDock from '@/components/layout/CompareDock';
+import NextAuthProvider from '@/components/layout/NextAuthProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,17 +21,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-neutral-950 text-white antialiased min-h-screen flex flex-col`}>
+      <body className={`${inter.className} bg-neutral-950 text-white`}>
+        <NextAuthProvider>
+          <CompareProvider>
+            <Navbar />
+            <main className="min-h-screen pt-20">
+              {children}
+            </main>
+            <Footer />
+            <CompareDock />
+          </CompareProvider>
+        </NextAuthProvider>
         <GoogleAnalytics />
-        <CompareProvider>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <CompareDock />
-        </CompareProvider>
       </body>
     </html>
   );
