@@ -13,7 +13,7 @@ export default function SmartSearch() {
   ];
 
   return (
-    <section className="py-32 bg-neutral-950">
+    <section className="py-32 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span className="text-sm text-orange-500 uppercase tracking-widest font-semibold mb-4 block">
           AI-Powered
@@ -27,7 +27,7 @@ export default function SmartSearch() {
           Describe your requirements in plain language. Our intelligent search helps match you with the right equipment.
         </p>
 
-        <div className="bg-neutral-900 border border-neutral-800 rounded-xl p-2 mb-8 transition-colors focus-within:border-orange-500/50">
+        <div className="bg-black/20 backdrop-blur-sm border-y border-white/5 border border-neutral-800 rounded-xl p-2 mb-8 transition-colors focus-within:border-orange-500/50">
           <textarea
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -48,7 +48,7 @@ export default function SmartSearch() {
               <button
                 key={idx}
                 onClick={() => setQuery(chip)}
-                className="bg-neutral-900 border border-neutral-800 text-neutral-300 px-4 py-2 rounded-full text-sm hover:border-orange-500 hover:text-white transition-colors cursor-pointer"
+                className="bg-black/20 backdrop-blur-sm border-y border-white/5 border border-neutral-800 text-neutral-300 px-4 py-2 rounded-full text-sm hover:border-orange-500 hover:text-white transition-colors cursor-pointer"
               >
                 {chip}
               </button>

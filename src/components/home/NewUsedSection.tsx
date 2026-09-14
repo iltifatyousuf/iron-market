@@ -6,7 +6,7 @@ export default function NewUsedSection() {
     <section className="py-0 w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
         {/* NEW Equipment Side */}
-        <div className="bg-neutral-900 relative p-12 lg:p-20 flex flex-col justify-center">
+        <div className="bg-black/20 backdrop-blur-sm border-y border-white/5 relative p-12 lg:p-20 flex flex-col justify-center">
           <div className="w-12 h-1 bg-orange-500 mb-6"></div>
           <span className="text-xs text-orange-500 font-bold uppercase tracking-widest mb-4 block">New</span>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">New Equipment</h2>

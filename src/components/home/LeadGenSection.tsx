@@ -43,7 +43,7 @@ export default function LeadGenSection() {
 
   if (submitted) {
     return (
-      <section className="py-32 bg-neutral-950">
+      <section className="py-32 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 border border-neutral-700 rounded-2xl p-8 md:p-12 lg:p-20 text-center">
             <div className="text-6xl mb-6">✅</div>
@@ -64,7 +64,7 @@ export default function LeadGenSection() {
   }
 
   return (
-    <section className="py-32 bg-neutral-950">
+    <section className="py-32 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-neutral-900 to-neutral-800 border border-neutral-700 rounded-2xl p-8 md:p-12 lg:p-20 shadow-2xl relative overflow-hidden">
           {/* Decorative background elements */}
@@ -81,19 +81,19 @@ export default function LeadGenSection() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="text-sm font-medium text-neutral-300 mb-2 block">Full Name</label>
-                  <input type="text" id="name" name="name" required className="w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="John Doe" />
+                  <input type="text" id="name" name="name" required className="w-full bg-transparent border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="John Doe" />
                 </div>
                 <div>
                   <label htmlFor="email" className="text-sm font-medium text-neutral-300 mb-2 block">Email Address</label>
-                  <input type="email" id="email" name="email" required className="w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="john@example.com" />
+                  <input type="email" id="email" name="email" required className="w-full bg-transparent border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="john@example.com" />
                 </div>
                 <div>
                   <label htmlFor="phone" className="text-sm font-medium text-neutral-300 mb-2 block">Phone Number</label>
-                  <input type="tel" id="phone" name="phone" className="w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="+1 (555) 000-0000" />
+                  <input type="tel" id="phone" name="phone" className="w-full bg-transparent border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="+1 (555) 000-0000" />
                 </div>
                 <div>
                   <label htmlFor="type" className="text-sm font-medium text-neutral-300 mb-2 block">Equipment Type</label>
-                  <select id="type" name="type" className="w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all appearance-none">
+                  <select id="type" name="type" className="w-full bg-transparent border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all appearance-none">
                     <option value="" disabled selected>Select equipment type</option>
                     <option value="excavator">Excavator</option>
                     <option value="bulldozer">Bulldozer</option>
@@ -106,15 +106,15 @@ export default function LeadGenSection() {
                 </div>
                 <div>
                   <label htmlFor="location" className="text-sm font-medium text-neutral-300 mb-2 block">Target Location</label>
-                  <input type="text" id="location" name="location" className="w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="e.g., Dubai, UAE" />
+                  <input type="text" id="location" name="location" className="w-full bg-transparent border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="e.g., Dubai, UAE" />
                 </div>
                 <div>
                   <label htmlFor="budget" className="text-sm font-medium text-neutral-300 mb-2 block">Estimated Budget ($)</label>
-                  <input type="text" id="budget" name="budget" className="w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="e.g., 150,000" />
+                  <input type="text" id="budget" name="budget" className="w-full bg-transparent border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all" placeholder="e.g., 150,000" />
                 </div>
                 <div>
                   <label htmlFor="condition" className="text-sm font-medium text-neutral-300 mb-2 block">Condition Preferred</label>
-                  <select id="condition" name="condition" className="w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all appearance-none">
+                  <select id="condition" name="condition" className="w-full bg-transparent border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all appearance-none">
                     <option value="any">Any Condition</option>
                     <option value="new">New</option>
                     <option value="used">Used</option>
@@ -122,7 +122,7 @@ export default function LeadGenSection() {
                 </div>
                 <div className="md:col-span-2">
                   <label htmlFor="requirements" className="text-sm font-medium text-neutral-300 mb-2 block">Specific Requirements</label>
-                  <textarea id="requirements" name="requirements" rows={4} className="w-full bg-neutral-950 border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all resize-none" placeholder="Please describe any specific brands, models, hours, or features you are looking for..."></textarea>
+                  <textarea id="requirements" name="requirements" rows={4} className="w-full bg-transparent border border-neutral-700 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 outline-none transition-all resize-none" placeholder="Please describe any specific brands, models, hours, or features you are looking for..."></textarea>
                 </div>
               </div>
               

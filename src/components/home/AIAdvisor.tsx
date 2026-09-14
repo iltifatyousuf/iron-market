@@ -28,9 +28,9 @@ export default function AIAdvisor() {
       </div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-neutral-950 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
+        <div className="bg-transparent border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
           {/* Header */}
-          <div className="bg-neutral-900 border-b border-neutral-800 p-4 flex items-center gap-3">
+          <div className="bg-black/20 backdrop-blur-sm border-y border-white/5 border-b border-neutral-800 p-4 flex items-center gap-3">
             <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></div>
             <span className="font-semibold text-white">IRONMARKET AI Advisor</span>
           </div>
@@ -47,7 +47,7 @@ export default function AIAdvisor() {
 
             <div className="space-y-3">
               {/* Card 1 */}
-              <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-4 flex gap-4 items-center">
+              <div className="bg-black/20 backdrop-blur-sm border-y border-white/5 border border-neutral-700 rounded-lg p-4 flex gap-4 items-center">
                 <div className="w-16 h-16 bg-neutral-700 rounded-lg flex-shrink-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1580901368919-7738efb0f228?w=800&q=80')" }}></div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1">
@@ -60,7 +60,7 @@ export default function AIAdvisor() {
               </div>
 
               {/* Card 2 */}
-              <div className="bg-neutral-900 border border-neutral-700 rounded-lg p-4 flex gap-4 items-center">
+              <div className="bg-black/20 backdrop-blur-sm border-y border-white/5 border border-neutral-700 rounded-lg p-4 flex gap-4 items-center">
                 <div className="w-16 h-16 bg-neutral-700 rounded-lg flex-shrink-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1621922688758-2a2c9fc39e21?w=800&q=80')" }}></div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1">
@@ -79,11 +79,11 @@ export default function AIAdvisor() {
           </div>
 
           {/* Input */}
-          <div className="border-t border-neutral-800 p-4 flex gap-4 bg-neutral-950">
+          <div className="border-t border-neutral-800 p-4 flex gap-4 bg-transparent">
             <input 
               type="text" 
               placeholder="Ask about equipment..." 
-              className="bg-neutral-900 border border-neutral-700 rounded-xl px-4 py-3 flex-1 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 transition-colors"
+              className="bg-black/20 backdrop-blur-sm border-y border-white/5 border border-neutral-700 rounded-xl px-4 py-3 flex-1 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 transition-colors"
               disabled
             />
             <button className="bg-orange-500 hover:bg-orange-600 rounded-xl p-3 text-white transition-colors flex items-center justify-center">

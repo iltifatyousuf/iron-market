@@ -2,7 +2,7 @@ export default function TrustStrip() {
   const brands = ['CAT', 'KOMATSU', 'VOLVO', 'LIEBHERR', 'JCB', 'JOHN DEERE', 'HITACHI', 'CASE', 'HYUNDAI', 'DOOSAN'];
   
   return (
-    <section className="py-16 bg-neutral-950 border-y border-neutral-800">
+    <section className="py-16 bg-transparent border-y border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-sm text-neutral-500 uppercase tracking-widest text-center mb-10">
           Equipment from leading manufacturers and dealers

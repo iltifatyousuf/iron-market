@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function FinalCTA() {
   return (
-    <section className="py-32 relative overflow-hidden bg-neutral-950">
+    <section className="py-32 relative overflow-hidden bg-transparent">
       {/* Background gradients and patterns */}
       <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 z-0"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1)_0%,transparent_60%)] z-0"></div>

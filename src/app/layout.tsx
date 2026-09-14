@@ -7,6 +7,7 @@ import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
 import { CompareProvider } from '@/context/CompareContext';
 import CompareDock from '@/components/layout/CompareDock';
 import NextAuthProvider from '@/components/layout/NextAuthProvider';
+import InteractiveBackground from '@/components/ui/InteractiveBackground';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,7 +29,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-neutral-950 text-white`}>
+      <body className={`${inter.className} text-white`}>
+        <InteractiveBackground />
         <NextAuthProvider>
           <CompareProvider>
             <Navbar />

@@ -9,7 +9,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-32 bg-neutral-950 relative overflow-hidden">
+    <section className="py-32 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-24">
           <p className="text-sm text-orange-500 uppercase tracking-widest font-bold mb-4">How It Works</p>
@@ -22,7 +22,7 @@ export default function HowItWorks() {
           
           {steps.map((step, i) => (
             <div key={i} className="relative z-10 flex flex-col items-center text-center group">
-              <div className="w-24 h-24 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center mb-8 relative">
+              <div className="w-24 h-24 rounded-full bg-black/20 backdrop-blur-sm border-y border-white/5 border border-neutral-800 flex items-center justify-center mb-8 relative">
                 <span className="text-6xl font-black text-orange-500/20 group-hover:text-orange-500/40 transition-colors">{step.num}</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>

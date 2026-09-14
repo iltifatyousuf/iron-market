@@ -16,7 +16,7 @@ export default function GlobalMarketplace() {
   ];
 
   return (
-    <section className="py-32 bg-neutral-900">
+    <section className="py-32 bg-black/20 backdrop-blur-sm border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-sm text-orange-500 uppercase tracking-widest font-bold mb-4">Global Reach</p>
@@ -24,7 +24,7 @@ export default function GlobalMarketplace() {
         </div>
 
         {/* Abstract Map Area */}
-        <div className="relative w-full h-96 bg-neutral-950 border border-neutral-800 rounded-xl overflow-hidden mb-16">
+        <div className="relative w-full h-96 bg-transparent border border-neutral-800 rounded-xl overflow-hidden mb-16">
           {/* Map dot grid simulation - purely decorative background */}
           <div className="absolute inset-0 opacity-20" style={{
             backgroundImage: 'radial-gradient(#404040 2px, transparent 2px)',

@@ -14,7 +14,7 @@ const industries = [
 
 export default function IndustrySection() {
   return (
-    <section className="py-32 bg-neutral-900">
+    <section className="py-32 bg-black/20 backdrop-blur-sm border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center md:text-left">
           <p className="text-sm text-orange-500 uppercase tracking-widest font-bold mb-4">Industries</p>
@@ -23,7 +23,7 @@ export default function IndustrySection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {industries.map((ind, i) => (
-            <div key={i} className="bg-neutral-950 border border-neutral-800 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300 group cursor-pointer flex flex-col h-full">
+            <div key={i} className="bg-transparent border border-neutral-800 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300 group cursor-pointer flex flex-col h-full">
               <div className="text-4xl mb-6">{ind.icon}</div>
               <h3 className="text-xl font-bold text-white mb-3">{ind.name}</h3>
               <p className="text-sm text-neutral-400 flex-grow mb-6">{ind.description}</p>

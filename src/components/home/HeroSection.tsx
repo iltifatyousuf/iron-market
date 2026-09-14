@@ -26,7 +26,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 bg-neutral-950 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 bg-transparent overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-800 via-neutral-950 to-neutral-950 opacity-60"></div>
       
@@ -59,30 +59,30 @@ export default function HeroSection() {
               type="text" 
               name="search"
               placeholder="What equipment are you looking for? (e.g. CAT 320, Excavator)" 
-              className="w-full bg-neutral-950 border border-neutral-800 text-white px-4 py-3 rounded-lg mb-4 focus:outline-none focus:border-orange-500"
+              className="w-full bg-transparent border border-neutral-800 text-white px-4 py-3 rounded-lg mb-4 focus:outline-none focus:border-orange-500"
             />
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
-              <select name="category" className="bg-neutral-950 border border-neutral-800 text-neutral-300 px-4 py-3 rounded-lg focus:outline-none focus:border-orange-500">
+              <select name="category" className="bg-transparent border border-neutral-800 text-neutral-300 px-4 py-3 rounded-lg focus:outline-none focus:border-orange-500">
                 <option value="">Equipment Type</option>
                 <option value="Excavators">Excavators</option>
                 <option value="Bulldozers">Bulldozers</option>
                 <option value="Wheel Loaders">Wheel Loaders</option>
                 <option value="Cranes">Cranes</option>
               </select>
-              <select name="brand" className="bg-neutral-950 border border-neutral-800 text-neutral-300 px-4 py-3 rounded-lg focus:outline-none focus:border-orange-500">
+              <select name="brand" className="bg-transparent border border-neutral-800 text-neutral-300 px-4 py-3 rounded-lg focus:outline-none focus:border-orange-500">
                 <option value="">Brand</option>
                 <option value="Caterpillar">Caterpillar</option>
                 <option value="Komatsu">Komatsu</option>
                 <option value="Volvo">Volvo</option>
                 <option value="John Deere">John Deere</option>
               </select>
-              <select name="location" className="bg-neutral-950 border border-neutral-800 text-neutral-300 px-4 py-3 rounded-lg focus:outline-none focus:border-orange-500">
+              <select name="location" className="bg-transparent border border-neutral-800 text-neutral-300 px-4 py-3 rounded-lg focus:outline-none focus:border-orange-500">
                 <option value="">Location</option>
                 <option value="Dubai, UAE">Dubai, UAE</option>
                 <option value="Houston, USA">Houston, USA</option>
                 <option value="London, UK">London, UK</option>
               </select>
-              <select name="condition" className="bg-neutral-950 border border-neutral-800 text-neutral-300 px-4 py-3 rounded-lg focus:outline-none focus:border-orange-500">
+              <select name="condition" className="bg-transparent border border-neutral-800 text-neutral-300 px-4 py-3 rounded-lg focus:outline-none focus:border-orange-500">
                 <option value="">Condition</option>
                 <option value="New">New</option>
                 <option value="Used">Used</option>

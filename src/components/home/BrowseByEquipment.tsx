@@ -4,7 +4,7 @@ import { categories } from '@/data/categories';
 
 export default function BrowseByEquipment() {
   return (
-    <section className="py-32 bg-neutral-950">
+    <section className="py-32 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <span className="text-sm text-orange-500 uppercase tracking-widest font-semibold mb-2 block">Equipment Categories</span>
@@ -14,7 +14,7 @@ export default function BrowseByEquipment() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {categories?.map((category: any, idx: number) => (
             <Link key={idx} href={`/equipment?category=${category.slug}`}>
-              <div className="relative overflow-hidden rounded-lg group cursor-pointer border border-neutral-800 bg-neutral-900 p-6 h-full hover:border-orange-500/50 hover:scale-[1.02] transition-all duration-300 flex flex-col">
+              <div className="relative overflow-hidden rounded-lg group cursor-pointer border border-neutral-800 bg-black/20 backdrop-blur-sm border-y border-white/5 p-6 h-full hover:border-orange-500/50 hover:scale-[1.02] transition-all duration-300 flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-neutral-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 
                 <div className="flex justify-between items-start mb-4 relative z-10">

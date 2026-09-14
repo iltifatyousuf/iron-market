@@ -40,7 +40,7 @@ const articles = [
 
 export default function InsightsSection() {
   return (
-    <section className="py-32 bg-neutral-900">
+    <section className="py-32 bg-black/20 backdrop-blur-sm border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
@@ -54,12 +54,12 @@ export default function InsightsSection() {
 
         <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 pb-8 lg:pb-0 snap-x">
           {articles.slice(0, 3).map((article, idx) => (
-            <div key={idx} className="bg-neutral-950 border border-neutral-800 rounded-lg overflow-hidden group hover:border-orange-500/50 transition-colors min-w-[300px] md:min-w-[400px] lg:min-w-0 snap-center shrink-0 flex flex-col">
+            <div key={idx} className="bg-transparent border border-neutral-800 rounded-lg overflow-hidden group hover:border-orange-500/50 transition-colors min-w-[300px] md:min-w-[400px] lg:min-w-0 snap-center shrink-0 flex flex-col">
               <div 
                 className="h-48 bg-gradient-to-br from-neutral-800 to-neutral-700 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                 style={{ backgroundImage: `url('${article.image}')` }}
               ></div>
-              <div className="p-6 relative bg-neutral-950 z-10 flex-1 flex flex-col">
+              <div className="p-6 relative bg-transparent z-10 flex-1 flex flex-col">
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-xs text-orange-500 uppercase font-bold tracking-wider">{article.category}</span>
                   <span className="text-xs text-neutral-500">{article.readTime}</span>
