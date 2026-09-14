@@ -39,12 +39,25 @@ export default function AuthModal({ isOpen, onClose }: AuthModalProps) {
           </svg>
         </button>
 
-        {/* Left Side: Cinematic Visual (Inspired by the reference image) */}
+        {/* Left Side: Brutalist Visual (Inspired by the reference image) */}
         <div className="relative w-full md:w-1/2 p-10 flex flex-col justify-between overflow-hidden">
-          {/* Gradient Background simulating the copper/purple mesh */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-orange-800 to-orange-500 opacity-80 mix-blend-screen"></div>
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888087625-0547078e6fa3?q=80&w=2070')] bg-cover bg-center mix-blend-overlay opacity-30"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-60"></div>
+          
+          {/* Brutalist Image Background */}
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504307651254-35680f356f27?q=80&w=2070')] bg-cover bg-center grayscale contrast-125 brightness-50 mix-blend-screen"></div>
+          
+          {/* Brutalist Crosshairs */}
+          <div className="absolute inset-0 opacity-40 mix-blend-overlay">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="modal-crosshairs" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                  <path d="M 40 35 L 40 45 M 35 40 L 45 40" stroke="#ffffff" strokeWidth="1" fill="none" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#modal-crosshairs)" />
+            </svg>
+          </div>
+
+          <div className="absolute inset-0 bg-gradient-to-r from-[#06090e]/80 via-transparent to-[#0c0c0c]"></div>
           
           <div className="relative z-10">
             <div className="flex items-center space-x-2 mb-12">
