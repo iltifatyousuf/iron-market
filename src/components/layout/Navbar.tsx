@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSession, signOut } from 'next-auth/react';
+import AuthModal from '@/components/ui/AuthModal';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -63,9 +65,12 @@ export default function Navbar() {
                 <button onClick={() => signOut()} className="text-sm text-neutral-400 hover:text-white">Log out</button>
               </div>
             ) : (
-              <Link href="/login" className="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded font-medium transition-colors text-sm border border-white/10">
+              <button 
+                onClick={() => setIsAuthModalOpen(true)}
+                className="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded font-medium transition-colors text-sm border border-white/10"
+              >
                 Sign In
-              </Link>
+              </button>
             )}
             
             <Link href="/contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded font-medium transition-colors text-sm">
@@ -109,6 +114,8 @@ export default function Navbar() {
           </Link>
         </div>
       )}
+      
+      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
     </header>
   );
 }
