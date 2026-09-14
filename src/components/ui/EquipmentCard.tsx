@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { formatPrice } from '@/lib/utils';
-import CompareButton from './CompareButton';
+import CompareButton from '@/components/equipment/CompareButton';
 
 interface EquipmentCardProps {
   equipment: any;
