@@ -24,33 +24,40 @@ export default function InteractiveBackground() {
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-[#06090e] pointer-events-none">
       
-      {/* 1. Blueprint Grid (Orange) */}
-      <div className="absolute inset-0 opacity-20">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            {/* Small Grid */}
-            <pattern id="smallGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-              <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(249, 115, 22, 0.15)" strokeWidth="0.5" />
-            </pattern>
-            {/* Large Grid with Crosshairs */}
-            <pattern id="grid" width="144" height="144" patternUnits="userSpaceOnUse">
-              <rect width="144" height="144" fill="url(#smallGrid)" />
-              <path d="M 144 0 L 0 0 0 144" fill="none" stroke="rgba(249, 115, 22, 0.4)" strokeWidth="1" />
-              {/* Center Crosshair */}
-              <path d="M 72 68 L 72 76 M 68 72 L 76 72" stroke="rgba(249, 115, 22, 0.8)" strokeWidth="1" fill="none" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-
-      {/* 2. Diagonal Stripes (Subtle) */}
+      {/* 1. Diagonal Stripes */}
       <div 
-        className="absolute inset-0 opacity-[0.07]"
+        className="absolute inset-0 opacity-[0.10]"
         style={{
           backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 2px, transparent 2px, transparent 8px)',
         }}
       />
+
+      {/* 2. Tiny Dot Grid */}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+      />
+
+      {/* 3. Crosshair Grid */}
+      <div className="absolute inset-0 opacity-20">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="crosshairs" x="0" y="0" width="144" height="144" patternUnits="userSpaceOnUse">
+              {/* Center Crosshair */}
+              <path d="M 72 68 L 72 76 M 68 72 L 76 72" stroke="#ffffff" strokeWidth="1" fill="none" />
+              {/* Corner Crosshairs (to ensure perfect tiling) */}
+              <path d="M 0 -4 L 0 4 M -4 0 L 4 0" stroke="#ffffff" strokeWidth="1" fill="none" />
+              <path d="M 144 -4 L 144 4 M 140 0 L 148 0" stroke="#ffffff" strokeWidth="1" fill="none" />
+              <path d="M 0 140 L 0 148 M -4 144 L 4 144" stroke="#ffffff" strokeWidth="1" fill="none" />
+              <path d="M 144 140 L 144 148 M 140 144 L 148 144" stroke="#ffffff" strokeWidth="1" fill="none" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#crosshairs)" />
+        </svg>
+      </div>
 
       {/* 3. Interactive Mouse Glow (Highlights the grid - SMALLER AREA) */}
       <div 
