@@ -8,6 +8,7 @@ import { CompareProvider } from '@/context/CompareContext';
 import CompareDock from '@/components/layout/CompareDock';
 import NextAuthProvider from '@/components/layout/NextAuthProvider';
 import InteractiveBackground from '@/components/ui/InteractiveBackground';
+import AIChat from '@/components/ui/AIChat';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
             </main>
             <Footer />
             <CompareDock />
+            <AIChat />
           </CompareProvider>
         </NextAuthProvider>
         <GoogleAnalytics />
