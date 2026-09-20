@@ -2,6 +2,7 @@ import { db } from '@/db';
 import { equipment, inquiries } from '@/db/schema';
 import { sql } from 'drizzle-orm';
 import Link from 'next/link';
+import ImportListingsClient from '@/components/admin/ImportListingsClient';
 
 export const dynamic = 'force-dynamic';
 
@@ -58,6 +59,11 @@ export default async function AdminDashboard() {
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Import & Sync */}
+      <div className="mb-12">
+        <ImportListingsClient />
       </div>
 
       {/* Recent Inquiries */}
