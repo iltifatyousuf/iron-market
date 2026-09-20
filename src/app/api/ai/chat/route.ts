@@ -187,11 +187,11 @@ export async function POST(req: Request) {
     equipmentContext = '\n\nDATABASE RESULTS: No exact matches found for the specified criteria. Suggest the user broaden their search or try different filters. Do NOT make up listings.';
   }
 
-  const result = streamText({
+  const result = await streamText({
     model: google('gemini-2.0-flash'),
     system: SYSTEM_PROMPT + equipmentContext,
     messages,
   });
 
-  return result.toDataStreamResponse();
+  return result.toAIStreamResponse();
 }
