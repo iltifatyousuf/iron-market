@@ -1,16 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
+  --color-background: #0a0a0a;
+  --color-foreground: #ededed;
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-mono);
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
-  --radius-2xl: 0px;
-  --radius-3xl: 0px;
 }
 
 /* ============================================================================
@@ -27,71 +20,17 @@ html {
 }
 
 body {
-  background: #000000;
-  color: #ffffff;
+  background: #0a0a0a;
+  color: #ededed;
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Brutalist Typography Overrides */
-h1, h2, h3, h4, h5, h6, 
-.font-bold, 
-button, 
-input, 
-select, 
-textarea,
-.badge,
-[class*="text-xs"],
-[class*="uppercase"] {
-  font-family: var(--font-mono), monospace !important;
-  letter-spacing: -0.02em;
-}
-
-/* Brutalist Interactive Elements */
-button, 
-a.bg-orange-500,
-input,
-select,
-textarea,
-[class*="bg-neutral-900"] {
-  border: 2px solid #ffffff !important;
-  box-shadow: 4px 4px 0px 0px rgba(249, 115, 22, 1) !important;
-  border-radius: 0 !important;
-  transition: all 0.1s ease !important;
-}
-
-button:hover, 
-a.bg-orange-500:hover,
-[class*="bg-neutral-900"]:hover {
-  transform: translate(2px, 2px) !important;
-  box-shadow: 2px 2px 0px 0px rgba(249, 115, 22, 1) !important;
-}
-
-button:active, 
-a.bg-orange-500:active {
-  transform: translate(4px, 4px) !important;
-  box-shadow: 0px 0px 0px 0px rgba(249, 115, 22, 1) !important;
-}
-
-/* Keep AI Chat bubble and dots round */
-[class*="rounded-full"],
-.typing-dot {
-  border-radius: 9999px !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Specific fix for background */
-#interactive-background {
-  border: none !important;
-  box-shadow: none !important;
-}
-
 /* Selection */
 ::selection {
-  background: #f97316;
-  color: #000000;
+  background: rgba(249, 115, 22, 0.3);
+  color: white;
 }
 
 /* Focus styles */

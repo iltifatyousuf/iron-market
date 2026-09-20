@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -10,8 +10,7 @@ import NextAuthProvider from '@/components/layout/NextAuthProvider';
 import InteractiveBackground from '@/components/ui/InteractiveBackground';
 import AIChat from '@/components/ui/AIChat';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const spaceMono = Space_Mono({ weight: ['400', '700'], subsets: ['latin'], variable: '--font-mono' });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'IRONMARKET — Global Heavy Equipment Marketplace',
@@ -31,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${spaceMono.variable} font-sans text-white bg-black`}>
+      <body className={`${inter.className} text-white`}>
         <InteractiveBackground />
         <NextAuthProvider>
           <CompareProvider>
