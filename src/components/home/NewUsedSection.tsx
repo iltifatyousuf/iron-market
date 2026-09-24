@@ -3,49 +3,35 @@ import Link from 'next/link';
 
 export default function NewUsedSection() {
   return (
-    <section className="py-0 w-full">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-        {/* NEW Equipment Side */}
-        <div className="bg-black/20 backdrop-blur-sm border-y border-white/5 relative p-12 lg:p-20 flex flex-col justify-center">
-          <div className="w-12 h-1 bg-orange-500 mb-6"></div>
-          <span className="text-xs text-orange-500 font-bold uppercase tracking-widest mb-4 block">New</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">New Equipment</h2>
-          <p className="text-lg text-neutral-400 mb-6 max-w-lg">
-            Latest machines with modern technology, efficiency and manufacturer support.
-          </p>
-          <p className="text-sm text-neutral-500 mb-8 font-medium">3,400+ New Listings</p>
+    <section className="w-full bg-black text-white font-sans border-b-[0.5px] border-white/20">
+      <div className="grid grid-cols-1 md:grid-cols-4 w-full">
+        <div className="col-span-1 md:col-span-4 border-b-[0.5px] border-white/20 p-10 flex flex-col md:flex-row md:items-end justify-between bg-white text-black relative z-10">
           <div>
-            <Link 
-              href="#" 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg inline-flex items-center font-semibold transition-all duration-300 group"
-            >
-              Explore New Equipment 
-              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
+             <div className="font-bold uppercase text-[10px] tracking-widest mb-6 opacity-60 text-red-500">/ NEWUSED</div>
+             <h2 className="text-4xl md:text-5xl font-bold uppercase leading-none tracking-tighter">
+               New Used.
+             </h2>
           </div>
+          <Link href="#" className="mt-8 md:mt-0 uppercase text-[10px] font-bold tracking-widest flex items-center gap-2 hover:text-red-500 transition">
+            Explore 
+            <span className="w-5 h-5 bg-black text-white rounded-full inline-flex items-center justify-center">↗</span>
+          </Link>
         </div>
-
-        {/* USED Equipment Side */}
-        <div className="bg-neutral-800 relative p-12 lg:p-20 flex flex-col justify-center">
-          {/* Subtle divider overlap for desktop */}
-          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-neutral-900 to-transparent z-10 pointer-events-none"></div>
-          
-          <div className="w-12 h-1 bg-neutral-600 mb-6"></div>
-          <span className="text-xs text-neutral-400 font-bold uppercase tracking-widest mb-4 block">Used</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Used Equipment</h2>
-          <p className="text-lg text-neutral-400 mb-6 max-w-lg">
-            Find proven machines from dealers and equipment marketplaces worldwide.
-          </p>
-          <p className="text-sm text-neutral-500 mb-8 font-medium">21,600+ Used Listings</p>
-          <div>
-            <Link 
-              href="#" 
-              className="border border-neutral-700 hover:bg-white/5 text-white px-8 py-4 rounded-lg inline-flex items-center font-semibold transition-all duration-300 group"
-            >
-              Explore Used Equipment 
-              <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
-          </div>
+        
+        <div className="col-span-1 md:col-span-2 border-r-[0.5px] border-b-[0.5px] md:border-b-0 border-white/20 p-10 min-h-[300px] flex items-center justify-center bg-black text-white">
+           <div className="w-64 h-64 border-[0.5px] border-dashed border-white/30 rounded-full flex items-center justify-center p-4">
+              <div className="w-full h-full bg-white/5 rounded-full flex items-center justify-center text-xs uppercase tracking-widest opacity-50 text-center px-4">Content Block</div>
+           </div>
+        </div>
+        
+        <div className="col-span-1 md:col-span-2 p-10 min-h-[300px] flex items-center justify-center bg-white text-black">
+           <div className="w-full max-w-sm">
+             <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Precision & Scale</h3>
+             <p className="text-sm font-medium opacity-70 mb-8 uppercase tracking-widest leading-relaxed">We deliver unparalleled service for heavy machinery logistics, procurement, and deployment across the globe.</p>
+             <button className="border border-black hover:bg-black hover:text-white uppercase text-[10px] font-bold tracking-widest px-8 py-4 rounded-full transition-colors w-full">
+               Learn More
+             </button>
+           </div>
         </div>
       </div>
     </section>

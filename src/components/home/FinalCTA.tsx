@@ -1,28 +1,37 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function FinalCTA() {
   return (
-    <section className="py-32 relative overflow-hidden bg-transparent">
-      {/* Background gradients and patterns */}
-      <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 z-0"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.1)_0%,transparent_60%)] z-0"></div>
-      
-      {/* Decorative grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] z-0"></div>
-
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight">Your Next Machine Is Out There.</h2>
-        <p className="text-xl text-neutral-300 mt-6 max-w-2xl mx-auto leading-relaxed">
-          Search thousands of heavy equipment listings from dealers and marketplace partners worldwide.
-        </p>
+    <section className="w-full bg-black text-white font-sans border-b-[0.5px] border-white/20">
+      <div className="grid grid-cols-1 md:grid-cols-4 w-full">
+        <div className="col-span-1 md:col-span-4 border-b-[0.5px] border-white/20 p-10 flex flex-col md:flex-row md:items-end justify-between bg-white text-black relative z-10">
+          <div>
+             <div className="font-bold uppercase text-[10px] tracking-widest mb-6 opacity-60 text-red-500">/ FINALCTA</div>
+             <h2 className="text-4xl md:text-5xl font-bold uppercase leading-none tracking-tighter">
+               Final C T A.
+             </h2>
+          </div>
+          <Link href="#" className="mt-8 md:mt-0 uppercase text-[10px] font-bold tracking-widest flex items-center gap-2 hover:text-red-500 transition">
+            Explore 
+            <span className="w-5 h-5 bg-black text-white rounded-full inline-flex items-center justify-center">↗</span>
+          </Link>
+        </div>
         
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors text-lg shadow-[0_0_20px_rgba(249,115,22,0.3)]">
-            Explore Machinery
-          </a>
-          <a href="#" className="w-full sm:w-auto border border-neutral-700 text-white hover:bg-white/5 font-semibold px-8 py-4 rounded-lg transition-colors text-lg">
-            Find My Equipment
-          </a>
+        <div className="col-span-1 md:col-span-2 border-r-[0.5px] border-b-[0.5px] md:border-b-0 border-white/20 p-10 min-h-[300px] flex items-center justify-center bg-black text-white">
+           <div className="w-64 h-64 border-[0.5px] border-dashed border-white/30 rounded-full flex items-center justify-center p-4">
+              <div className="w-full h-full bg-white/5 rounded-full flex items-center justify-center text-xs uppercase tracking-widest opacity-50 text-center px-4">Content Block</div>
+           </div>
+        </div>
+        
+        <div className="col-span-1 md:col-span-2 p-10 min-h-[300px] flex items-center justify-center bg-white text-black">
+           <div className="w-full max-w-sm">
+             <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Precision & Scale</h3>
+             <p className="text-sm font-medium opacity-70 mb-8 uppercase tracking-widest leading-relaxed">We deliver unparalleled service for heavy machinery logistics, procurement, and deployment across the globe.</p>
+             <button className="border border-black hover:bg-black hover:text-white uppercase text-[10px] font-bold tracking-widest px-8 py-4 rounded-full transition-colors w-full">
+               Learn More
+             </button>
+           </div>
         </div>
       </div>
     </section>

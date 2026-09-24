@@ -1,83 +1,37 @@
 import React from 'react';
-
-const articles = [
-  {
-    title: 'How Much Does an Excavator Cost in 2025?',
-    category: 'Buying Guide',
-    readTime: '8 min read',
-    excerpt: 'Explore the latest pricing trends, factors affecting costs, and tips for finding the best deals on new and used excavators.',
-    image: 'https://images.unsplash.com/photo-1580901368919-7738efb0f228?w=800&q=80'
-  },
-  {
-    title: 'New vs Used Heavy Equipment: Which Is Better?',
-    category: 'Analysis',
-    readTime: '6 min read',
-    excerpt: 'An in-depth analysis of the pros and cons of buying new versus used heavy equipment for your construction projects.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80'
-  },
-  {
-    title: 'Top Excavator Brands for Construction',
-    category: 'Industry',
-    readTime: '10 min read',
-    excerpt: 'Discover the leading excavator manufacturers and compare their reliability, performance, and total cost of ownership.',
-    image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&q=80'
-  },
-  {
-    title: 'How to Choose the Right Wheel Loader',
-    category: 'Buying Guide',
-    readTime: '7 min read',
-    excerpt: 'A comprehensive guide to selecting the optimal wheel loader based on bucket capacity, engine power, and application requirements.',
-    image: 'https://images.unsplash.com/photo-1621922688758-2a2c9fc39e21?w=800&q=80'
-  },
-  {
-    title: 'Heavy Equipment Buying Guide for First-Time Buyers',
-    category: 'Guide',
-    readTime: '12 min read',
-    excerpt: 'Everything you need to know before making your first heavy machinery purchase, from financing to inspections.',
-    image: 'https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?w=800&q=80'
-  }
-];
+import Link from 'next/link';
 
 export default function InsightsSection() {
   return (
-    <section className="py-32 bg-black/20 backdrop-blur-sm border-y border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <span className="text-sm text-orange-500 uppercase tracking-widest font-semibold block mb-4">INSIGHTS</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">Heavy Equipment Insights</h2>
+    <section className="w-full bg-black text-white font-sans border-b-[0.5px] border-white/20">
+      <div className="grid grid-cols-1 md:grid-cols-4 w-full">
+        <div className="col-span-1 md:col-span-4 border-b-[0.5px] border-white/20 p-10 flex flex-col md:flex-row md:items-end justify-between bg-white text-black relative z-10">
+          <div>
+             <div className="font-bold uppercase text-[10px] tracking-widest mb-6 opacity-60 text-red-500">/ INSIGHTS</div>
+             <h2 className="text-4xl md:text-5xl font-bold uppercase leading-none tracking-tighter">
+               Insights.
+             </h2>
           </div>
-          <a href="#" className="text-orange-500 hover:text-orange-400 font-medium transition-colors hidden md:block">
-            View All Insights &rarr;
-          </a>
-        </div>
-
-        <div className="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 pb-8 lg:pb-0 snap-x">
-          {articles.slice(0, 3).map((article, idx) => (
-            <div key={idx} className="bg-transparent border border-neutral-800 rounded-lg overflow-hidden group hover:border-orange-500/50 transition-colors min-w-[300px] md:min-w-[400px] lg:min-w-0 snap-center shrink-0 flex flex-col">
-              <div 
-                className="h-48 bg-gradient-to-br from-neutral-800 to-neutral-700 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                style={{ backgroundImage: `url('${article.image}')` }}
-              ></div>
-              <div className="p-6 relative bg-transparent z-10 flex-1 flex flex-col">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-xs text-orange-500 uppercase font-bold tracking-wider">{article.category}</span>
-                  <span className="text-xs text-neutral-500">{article.readTime}</span>
-                </div>
-                <h3 className="text-lg font-bold text-white group-hover:text-orange-500 transition-colors leading-snug">{article.title}</h3>
-                <p className="text-sm text-neutral-400 mt-3 line-clamp-2 flex-1">{article.excerpt}</p>
-                <div className="mt-6 flex items-center text-sm font-semibold text-orange-500 group-hover:text-orange-400 transition-colors">
-                  Read Article <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
-                </div>
-              </div>
-            </div>
-          ))}
+          <Link href="#" className="mt-8 md:mt-0 uppercase text-[10px] font-bold tracking-widest flex items-center gap-2 hover:text-red-500 transition">
+            Explore 
+            <span className="w-5 h-5 bg-black text-white rounded-full inline-flex items-center justify-center">↗</span>
+          </Link>
         </div>
         
-        <div className="mt-8 text-center md:hidden">
-          <a href="#" className="inline-block text-orange-500 hover:text-orange-400 font-medium transition-colors">
-            View All Insights &rarr;
-          </a>
+        <div className="col-span-1 md:col-span-2 border-r-[0.5px] border-b-[0.5px] md:border-b-0 border-white/20 p-10 min-h-[300px] flex items-center justify-center bg-black text-white">
+           <div className="w-64 h-64 border-[0.5px] border-dashed border-white/30 rounded-full flex items-center justify-center p-4">
+              <div className="w-full h-full bg-white/5 rounded-full flex items-center justify-center text-xs uppercase tracking-widest opacity-50 text-center px-4">Content Block</div>
+           </div>
+        </div>
+        
+        <div className="col-span-1 md:col-span-2 p-10 min-h-[300px] flex items-center justify-center bg-white text-black">
+           <div className="w-full max-w-sm">
+             <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Precision & Scale</h3>
+             <p className="text-sm font-medium opacity-70 mb-8 uppercase tracking-widest leading-relaxed">We deliver unparalleled service for heavy machinery logistics, procurement, and deployment across the globe.</p>
+             <button className="border border-black hover:bg-black hover:text-white uppercase text-[10px] font-bold tracking-widest px-8 py-4 rounded-full transition-colors w-full">
+               Learn More
+             </button>
+           </div>
         </div>
       </div>
     </section>
