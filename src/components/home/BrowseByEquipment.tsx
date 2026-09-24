@@ -4,37 +4,53 @@ import { categories } from '@/data/categories';
 
 export default function BrowseByEquipment() {
   return (
-    <section className="py-32 bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
-          <span className="text-sm text-orange-500 uppercase tracking-widest font-semibold mb-2 block">Equipment Categories</span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Find Equipment for Every Job</h2>
+    <section className="w-full bg-black text-white overflow-hidden font-sans border-b-[0.5px] border-white/20">
+      
+      {/* Title Block */}
+      <div className="grid grid-cols-1 w-full">
+        <div className="col-span-1 border-b-[0.5px] border-white/20 p-10 flex flex-col md:flex-row md:items-end justify-between bg-white text-black relative z-10">
+          <div>
+             <div className="font-bold uppercase text-[10px] tracking-widest mb-6 opacity-60">/ CATEGORIES</div>
+             <h2 className="text-4xl md:text-5xl font-bold uppercase leading-none tracking-tighter">
+               Find equipment<br/>for every job.
+             </h2>
+          </div>
+          <Link href="/equipment" className="mt-8 md:mt-0 uppercase text-[10px] font-bold tracking-widest flex items-center gap-2 hover:text-red-500 transition">
+            Browse Catalog 
+            <span className="w-5 h-5 bg-black text-white rounded-full inline-flex items-center justify-center">&darr;</span>
+          </Link>
         </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {categories?.map((category: any, idx: number) => (
-            <Link key={idx} href={`/equipment?category=${category.slug}`}>
-              <div className="relative overflow-hidden rounded-lg group cursor-pointer border border-neutral-800 bg-black/20 backdrop-blur-sm border-y border-white/5 p-6 h-full hover:border-orange-500/50 hover:scale-[1.02] transition-all duration-300 flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-neutral-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                
-                <div className="flex justify-between items-start mb-4 relative z-10">
-                  <span className="text-4xl">{category.icon || '🚜'}</span>
-                  <span className="text-xs bg-orange-500/20 text-orange-400 px-2 py-1 rounded font-medium">
-                    {category.count || '0'} Listings
+      </div>
+
+      {/* Grid Block */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full">
+          {categories?.map((category: any, idx: number) => {
+            // Chessboard alternating pattern
+            const isWhite = (idx % 2 === 0 && Math.floor(idx / 4) % 2 === 1) || (idx % 2 === 1 && Math.floor(idx / 4) % 2 === 0);
+            const bgClass = isWhite ? 'bg-white text-black' : 'bg-black text-white';
+            const hoverAccent = isWhite ? 'hover:bg-red-500 hover:text-white' : 'hover:bg-red-500 hover:text-white';
+            const arrowClass = isWhite ? 'bg-black text-white' : 'bg-white text-black';
+
+            return (
+              <Link key={idx} href={`/equipment?category=${category.slug}`} className={`col-span-1 border-b-[0.5px] border-r-[0.5px] border-white/20 p-8 flex flex-col min-h-[250px] group transition-colors duration-500 ${bgClass} ${hoverAccent}`}>
+                <div className="flex justify-between items-start mb-auto relative z-10">
+                  <span className={`w-12 h-12 rounded-full border-[0.5px] flex items-center justify-center text-xl ${isWhite ? 'border-black/20' : 'border-white/20'}`}>
+                    {category.icon || '🚜'}
+                  </span>
+                  <span className="text-[10px] uppercase font-bold tracking-widest">
+                    {category.count || '0'}
                   </span>
                 </div>
                 
-                <div className="relative z-10 mt-auto">
-                  <h3 className="text-xl font-bold text-white mb-2">{category.name}</h3>
-                  <p className="text-sm text-neutral-400 mb-4">{category.description}</p>
-                  <div className="text-orange-500 text-sm font-semibold flex items-center opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-                    Explore <span className="ml-1">→</span>
+                <div className="relative z-10 mt-8">
+                  <h3 className="text-xl font-bold uppercase tracking-tight mb-2">{category.name}</h3>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center mt-4 transition-transform group-hover:scale-110 group-hover:bg-white group-hover:text-red-500 ${arrowClass}`}>
+                    ↗
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            )
+          })}
       </div>
     </section>
   );
