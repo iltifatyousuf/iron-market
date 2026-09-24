@@ -13,52 +13,52 @@ export default function SmartSearch() {
   ];
 
   return (
-    <section className="py-32 bg-transparent">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span className="text-sm text-orange-500 uppercase tracking-widest font-semibold mb-4 block">
-          AI-Powered
-        </span>
+    <section className="w-full bg-black text-white font-sans border-b-[0.5px] border-white/20">
+      <div className="grid grid-cols-1 md:grid-cols-4 w-full">
         
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-          Tell Us What You Need.
-        </h2>
-        
-        <p className="text-lg text-neutral-400 mb-12">
-          Describe your requirements in plain language. Our intelligent search helps match you with the right equipment.
-        </p>
-
-        <div className="bg-black/20 backdrop-blur-sm border-y border-white/5 border border-neutral-800 rounded-xl p-2 mb-8 transition-colors focus-within:border-orange-500/50">
-          <textarea
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="I need an excavator for a large construction project in Dubai..."
-            className="w-full bg-transparent text-white text-lg p-4 focus:outline-none resize-none h-32"
-          />
-          <div className="flex justify-end p-2">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300">
-              Find Matching Equipment
-            </button>
-          </div>
+        {/* Left Side: Title */}
+        <div className="col-span-1 md:col-span-2 border-r-[0.5px] border-b-[0.5px] md:border-b-0 border-white/20 p-10 flex flex-col justify-end bg-white text-black min-h-[400px]">
+          <div className="font-bold uppercase text-[10px] tracking-widest mb-auto opacity-60 text-red-500">/ AI-POWERED</div>
+          <h2 className="text-5xl lg:text-6xl font-bold uppercase leading-none tracking-tighter">
+            Tell us<br/>what you<br/>need.
+          </h2>
         </div>
 
-        <div className="text-left">
-          <p className="text-sm text-neutral-500 mb-4">Try these:</p>
-          <div className="flex flex-wrap gap-3 mb-10">
-            {chips.map((chip, idx) => (
-              <button
-                key={idx}
-                onClick={() => setQuery(chip)}
-                className="bg-black/20 backdrop-blur-sm border-y border-white/5 border border-neutral-800 text-neutral-300 px-4 py-2 rounded-full text-sm hover:border-orange-500 hover:text-white transition-colors cursor-pointer"
-              >
-                {chip}
+        {/* Right Side: Search Box */}
+        <div className="col-span-1 md:col-span-2 p-10 flex flex-col justify-center bg-black text-white min-h-[400px] relative">
+          
+          <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+            <div className="w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] border-[0.5px] border-dashed border-white/40 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[ping_10s_ease-in-out_infinite]"></div>
+          </div>
+
+          <div className="relative z-10">
+            <textarea
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="I NEED AN EXCAVATOR FOR A LARGE CONSTRUCTION PROJECT IN DUBAI..."
+              className="w-full bg-transparent text-white text-xl font-bold uppercase tracking-tight p-4 border-[0.5px] border-white/20 focus:outline-none focus:border-red-500 resize-none h-40 mb-4 transition-colors"
+            />
+            
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+              <div className="flex flex-wrap gap-2">
+                {chips.slice(0, 3).map((chip, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setQuery(chip)}
+                    className="border-[0.5px] border-white/20 text-white/60 px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-widest hover:border-red-500 hover:text-white transition-colors"
+                  >
+                    {chip}
+                  </button>
+                ))}
+              </div>
+              <button className="bg-red-500 hover:bg-white hover:text-black text-white uppercase text-[10px] font-bold tracking-widest px-8 py-4 rounded-full transition-colors whitespace-nowrap shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+                Find Match •
               </button>
-            ))}
+            </div>
           </div>
+
         </div>
-        
-        <p className="text-xs text-neutral-600">
-          Coming soon: AI-powered equipment matching
-        </p>
+
       </div>
     </section>
   );
