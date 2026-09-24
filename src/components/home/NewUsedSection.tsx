@@ -3,36 +3,20 @@ import Link from 'next/link';
 
 export default function NewUsedSection() {
   return (
-    <section className="w-full bg-black text-white font-sans border-b-[0.5px] border-white/20">
-      <div className="grid grid-cols-1 md:grid-cols-4 w-full">
-        <div className="col-span-1 md:col-span-4 border-b-[0.5px] border-white/20 p-10 flex flex-col md:flex-row md:items-end justify-between bg-white text-black relative z-10">
-          <div>
-             <div className="font-bold uppercase text-[10px] tracking-widest mb-6 opacity-60 text-red-500">/ NEWUSED</div>
-             <h2 className="text-4xl md:text-5xl font-bold uppercase leading-none tracking-tighter">
-               New Used.
-             </h2>
-          </div>
-          <Link href="#" className="mt-8 md:mt-0 uppercase text-[10px] font-bold tracking-widest flex items-center gap-2 hover:text-red-500 transition">
-            Explore 
-            <span className="w-5 h-5 bg-black text-white rounded-full inline-flex items-center justify-center">↗</span>
-          </Link>
-        </div>
-        
-        <div className="col-span-1 md:col-span-2 border-r-[0.5px] border-b-[0.5px] md:border-b-0 border-white/20 p-10 min-h-[300px] flex items-center justify-center bg-black text-white">
-           <div className="w-64 h-64 border-[0.5px] border-dashed border-white/30 rounded-full flex items-center justify-center p-4">
-              <div className="w-full h-full bg-white/5 rounded-full flex items-center justify-center text-xs uppercase tracking-widest opacity-50 text-center px-4">Content Block</div>
-           </div>
-        </div>
-        
-        <div className="col-span-1 md:col-span-2 p-10 min-h-[300px] flex items-center justify-center bg-white text-black">
-           <div className="w-full max-w-sm">
-             <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Precision & Scale</h3>
-             <p className="text-sm font-medium opacity-70 mb-8 uppercase tracking-widest leading-relaxed">We deliver unparalleled service for heavy machinery logistics, procurement, and deployment across the globe.</p>
-             <button className="border border-black hover:bg-black hover:text-white uppercase text-[10px] font-bold tracking-widest px-8 py-4 rounded-full transition-colors w-full">
-               Learn More
-             </button>
-           </div>
-        </div>
+    <section className="w-full font-sans border-b-[0.5px] border-white/20 bg-black">
+      <div className="grid grid-cols-1 md:grid-cols-2 w-full min-h-[500px]">
+        <Link href="/equipment?condition=new" className="col-span-1 border-r-[0.5px] border-white/20 p-10 flex flex-col justify-between group relative overflow-hidden bg-white text-black hover:text-white transition-colors">
+          <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+          <div className="relative z-10 font-bold uppercase text-[10px] tracking-widest text-red-500">/ CONDITION</div>
+          <h2 className="relative z-10 text-6xl md:text-8xl font-black uppercase tracking-tighter mt-auto">NEW<br/>MACHINES</h2>
+          <div className="relative z-10 mt-8 w-12 h-12 rounded-full border border-current flex items-center justify-center group-hover:rotate-45 transition-transform">↗</div>
+        </Link>
+        <Link href="/equipment?condition=used" className="col-span-1 p-10 flex flex-col justify-between group relative overflow-hidden bg-black text-white hover:text-black transition-colors">
+          <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+          <div className="relative z-10 font-bold uppercase text-[10px] tracking-widest text-red-500">/ CONDITION</div>
+          <h2 className="relative z-10 text-6xl md:text-8xl font-black uppercase tracking-tighter mt-auto">USED<br/>MACHINES</h2>
+          <div className="relative z-10 mt-8 w-12 h-12 rounded-full border border-current flex items-center justify-center group-hover:rotate-45 transition-transform">↗</div>
+        </Link>
       </div>
     </section>
   );
