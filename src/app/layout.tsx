@@ -31,9 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} text-white`}>
-        <InteractiveBackground />
         <NextAuthProvider>
           <CompareProvider>
+            <InteractiveBackground />
             <Navbar />
             <main className="min-h-screen pt-16">
               {children}
