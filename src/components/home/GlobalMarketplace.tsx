@@ -1,38 +1,41 @@
 import React from 'react';
-import Link from 'next/link';
 
 export default function GlobalMarketplace() {
   return (
     <section className="w-full bg-black text-white font-sans border-b-[0.5px] border-white/20">
       <div className="grid grid-cols-1 md:grid-cols-4 w-full">
-        <div className="col-span-1 md:col-span-4 border-b-[0.5px] border-white/20 p-10 flex flex-col md:flex-row md:items-end justify-between bg-white text-black relative z-10">
-          <div>
-             <div className="font-bold uppercase text-[10px] tracking-widest mb-6 opacity-60 text-red-500">/ GLOBALMARKETPLACE</div>
-             <h2 className="text-4xl md:text-5xl font-bold uppercase leading-none tracking-tighter">
-               Global Marketplace.
-             </h2>
-          </div>
-          <Link href="#" className="mt-8 md:mt-0 uppercase text-[10px] font-bold tracking-widest flex items-center gap-2 hover:text-red-500 transition">
-            Explore 
-            <span className="w-5 h-5 bg-black text-white rounded-full inline-flex items-center justify-center">↗</span>
-          </Link>
-        </div>
         
-        <div className="col-span-1 md:col-span-2 border-r-[0.5px] border-b-[0.5px] md:border-b-0 border-white/20 p-10 min-h-[300px] flex items-center justify-center bg-black text-white">
-           <div className="w-64 h-64 border-[0.5px] border-dashed border-white/30 rounded-full flex items-center justify-center p-4">
-              <div className="w-full h-full bg-white/5 rounded-full flex items-center justify-center text-xs uppercase tracking-widest opacity-50 text-center px-4">Content Block</div>
+        {/* Map Block */}
+        <div className="col-span-1 md:col-span-3 border-r-[0.5px] border-b-[0.5px] border-white/20 p-10 bg-black min-h-[400px] relative overflow-hidden flex items-center justify-center">
+           <div className="font-bold uppercase text-[10px] tracking-widest absolute top-10 left-10 text-red-500 z-20">/ REACH</div>
+           <div className="absolute inset-0 opacity-20 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-contain bg-no-repeat bg-center"></div>
+           
+           {/* Radar Ping */}
+           <div className="absolute top-1/3 left-1/2 w-4 h-4 bg-red-500 rounded-full">
+              <div className="w-full h-full bg-red-500 rounded-full animate-ping opacity-75"></div>
+           </div>
+           
+           <h2 className="relative z-10 text-4xl md:text-6xl font-bold uppercase tracking-tighter text-center max-w-2xl">
+             We ship<br/>anywhere on earth.
+           </h2>
+        </div>
+
+        {/* Stats Column */}
+        <div className="col-span-1 border-b-[0.5px] border-white/20 flex flex-col bg-white text-black">
+           <div className="flex-1 border-b-[0.5px] border-black/20 p-10 flex flex-col justify-center">
+             <div className="text-5xl font-bold uppercase tracking-tighter mb-2">120+</div>
+             <div className="text-[10px] uppercase font-bold tracking-widest opacity-60">Ports Served</div>
+           </div>
+           <div className="flex-1 border-b-[0.5px] border-black/20 p-10 flex flex-col justify-center">
+             <div className="text-5xl font-bold uppercase tracking-tighter mb-2">48<span className="text-red-500">H</span></div>
+             <div className="text-[10px] uppercase font-bold tracking-widest opacity-60">Customs Clearance</div>
+           </div>
+           <div className="flex-1 p-10 flex flex-col justify-center">
+             <div className="text-5xl font-bold uppercase tracking-tighter mb-2">0%</div>
+             <div className="text-[10px] uppercase font-bold tracking-widest opacity-60">Logistics Hassle</div>
            </div>
         </div>
-        
-        <div className="col-span-1 md:col-span-2 p-10 min-h-[300px] flex items-center justify-center bg-white text-black">
-           <div className="w-full max-w-sm">
-             <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Precision & Scale</h3>
-             <p className="text-sm font-medium opacity-70 mb-8 uppercase tracking-widest leading-relaxed">We deliver unparalleled service for heavy machinery logistics, procurement, and deployment across the globe.</p>
-             <button className="border border-black hover:bg-black hover:text-white uppercase text-[10px] font-bold tracking-widest px-8 py-4 rounded-full transition-colors w-full">
-               Learn More
-             </button>
-           </div>
-        </div>
+
       </div>
     </section>
   );

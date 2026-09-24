@@ -1,38 +1,49 @@
-import React from 'react';
-import Link from 'next/link';
+'use client';
+import React, { useState } from 'react';
 
 export default function FAQSection() {
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+
+  const faqs = [
+    { q: 'Are the machines inspected?', a: 'Yes, every piece of equipment undergoes a rigorous 120-point inspection by certified mechanics before being listed on IRONMARKET.' },
+    { q: 'Do you handle international shipping?', a: 'Absolutely. We partner with global freight forwarders to handle port-to-port and door-to-door logistics anywhere in the world.' },
+    { q: 'How does escrow payment work?', a: 'Funds are held in a secure escrow account and are only released to the seller once you have received and accepted the equipment.' },
+    { q: 'Can I finance my purchase?', a: 'Yes, we offer flexible financing options through our network of industrial lenders for qualified buyers.' }
+  ];
+
   return (
-    <section className="w-full bg-black text-white font-sans border-b-[0.5px] border-white/20">
+    <section className="w-full bg-white text-black font-sans border-b-[0.5px] border-black/20">
       <div className="grid grid-cols-1 md:grid-cols-4 w-full">
-        <div className="col-span-1 md:col-span-4 border-b-[0.5px] border-white/20 p-10 flex flex-col md:flex-row md:items-end justify-between bg-white text-black relative z-10">
-          <div>
-             <div className="font-bold uppercase text-[10px] tracking-widest mb-6 opacity-60 text-red-500">/ FAQ</div>
-             <h2 className="text-4xl md:text-5xl font-bold uppercase leading-none tracking-tighter">
-               F A Q.
-             </h2>
-          </div>
-          <Link href="#" className="mt-8 md:mt-0 uppercase text-[10px] font-bold tracking-widest flex items-center gap-2 hover:text-red-500 transition">
-            Explore 
-            <span className="w-5 h-5 bg-black text-white rounded-full inline-flex items-center justify-center">↗</span>
-          </Link>
-        </div>
         
-        <div className="col-span-1 md:col-span-2 border-r-[0.5px] border-b-[0.5px] md:border-b-0 border-white/20 p-10 min-h-[300px] flex items-center justify-center bg-black text-white">
-           <div className="w-64 h-64 border-[0.5px] border-dashed border-white/30 rounded-full flex items-center justify-center p-4">
-              <div className="w-full h-full bg-white/5 rounded-full flex items-center justify-center text-xs uppercase tracking-widest opacity-50 text-center px-4">Content Block</div>
-           </div>
+        <div className="col-span-1 border-r-[0.5px] border-b-[0.5px] md:border-b-0 border-black/20 p-10 flex flex-col bg-white min-h-[400px]">
+          <div className="font-bold uppercase text-[10px] tracking-widest opacity-60 text-red-500 mb-auto">/ SUPPORT</div>
+          <h2 className="text-5xl lg:text-6xl font-bold uppercase leading-none tracking-tighter">
+            F.A.Q.
+          </h2>
         </div>
-        
-        <div className="col-span-1 md:col-span-2 p-10 min-h-[300px] flex items-center justify-center bg-white text-black">
-           <div className="w-full max-w-sm">
-             <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Precision & Scale</h3>
-             <p className="text-sm font-medium opacity-70 mb-8 uppercase tracking-widest leading-relaxed">We deliver unparalleled service for heavy machinery logistics, procurement, and deployment across the globe.</p>
-             <button className="border border-black hover:bg-black hover:text-white uppercase text-[10px] font-bold tracking-widest px-8 py-4 rounded-full transition-colors w-full">
-               Learn More
-             </button>
-           </div>
+
+        <div className="col-span-1 md:col-span-3 flex flex-col bg-black text-white">
+          {faqs.map((faq, idx) => (
+            <div 
+              key={idx} 
+              className="border-b-[0.5px] border-white/20 cursor-pointer"
+              onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+            >
+              <div className="p-8 flex justify-between items-center hover:bg-white/5 transition-colors">
+                 <h3 className="text-lg font-bold uppercase tracking-tight">{faq.q}</h3>
+                 <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+                   {openIdx === idx ? '−' : '+'}
+                 </div>
+              </div>
+              {openIdx === idx && (
+                <div className="px-8 pb-8 text-[10px] uppercase font-bold tracking-widest opacity-60 leading-relaxed max-w-2xl">
+                  {faq.a}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
+
       </div>
     </section>
   );
