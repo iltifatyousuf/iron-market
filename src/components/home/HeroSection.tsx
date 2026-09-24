@@ -15,7 +15,7 @@ export default function HeroSection() {
 
         {/* Row 1, Col 1: WHO WE ARE */}
         <div className="col-span-1 border-r-[0.5px] border-b-[0.5px] border-white/20 p-10 flex flex-col justify-end min-h-[300px] relative z-10 bg-black">
-          <h1 className="text-5xl lg:text-6xl font-bold uppercase leading-none tracking-tighter mb-8">
+          <h1 className="text-4xl 2xl:text-5xl font-bold uppercase leading-[1.1] tracking-tighter mb-8 break-words hyphens-auto">
             Find<br />the right<br />machinery.
           </h1>
           <Link href="/equipment" className="mt-auto uppercase text-xs tracking-widest flex items-center gap-2 hover:text-orange-500 transition">
